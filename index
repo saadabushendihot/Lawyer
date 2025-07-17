@@ -1,335 +1,145 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة المحامي الشاملة: حلول رقمية متكاملة لإدارة مكاتب المحاماة العصرية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <title>تواصل مع المطور: سعد أبو شندي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            /* الألوان مستوحاة من ثيم مشروعك Material-UI */
+            --primary-color: #024684; /* أزرق داكن */
+            --secondary-color: #a7a9ad; /* رمادي */
+            --success-color: #3EB75E; /* أخضر */
+            --text-primary: #192335; /* أسود مزرق */
+            --text-secondary: #6b7385; /* رمادي أغمق */
+            --background-default: #f9f9f9;
+            --background-paper: #ffffff;
+            --whatsapp-green: #25D366;
+            --email-red: #DB4437;
+        }
+
         body {
             font-family: 'Cairo', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f6f8fa;
-            color: #24292e;
+            padding: 40px 20px;
+            background-color: var(--background-default);
+            color: var(--text-primary);
             line-height: 1.6;
+            direction: rtl;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 15px rgba(27,31,35,.1);
-        }
-        h1, h2, h3, h4, h5, h6 {
-            color: #024684;
-            font-weight: 700;
-            margin-top: 1.5em;
-            margin-bottom: 0.8em;
-        }
-        h1 { font-size: 2.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
-        h2 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
-        h3 { font-size: 1.5em; }
-        ul {
-            list-style-type: disc;
-            padding-right: 20px;
-        }
-        ul ul {
-            list-style-type: circle;
-        }
-        li {
-            margin-bottom: 0.5em;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #eaecef;
-            border-radius: 6px;
-            margin: 1em 0;
-        }
-        .screenshot-caption {
-            display: block;
+
+        .contact-card {
+            background-color: var(--background-paper);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 25px rgba(37, 47, 63, 0.15); /* ظل احترافي وبارز */
             text-align: center;
-            font-style: italic;
-            color: #586069;
-            margin-top: 0.5em;
-            font-size: 0.9em;
+            max-width: 500px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
-        pre {
-            background-color: #f6f8fa;
-            padding: 16px;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-family: monospace;
-            font-size: 0.9em;
-            line-height: 1.4;
-            color: #333;
+
+        .contact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 12px 35px rgba(37, 47, 63, 0.25); /* ظل أكبر عند التحويم */
         }
-        code {
-            font-family: monospace;
-            background-color: rgba(27,31,35,.05);
-            padding: 0.2em 0.4em;
-            border-radius: 3px;
+
+        .developer-name {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
         }
-        a {
-            color: #0366d6;
+
+        .contact-info {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--text-primary);
             text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
-        a:hover {
-            text-decoration: underline;
+
+        .contact-item:hover {
+            transform: translateY(-3px);
         }
-        blockquote {
-            border-right: 4px solid #dfe2e5;
-            padding: 0 1em;
-            color: #586069;
-            margin: 0 0 1em 0;
+
+        .contact-item i {
+            font-size: 1.6em;
         }
-        hr {
-            border: 0;
-            border-top: 1px solid #eaecef;
-            margin: 2em 0;
+
+        .whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
         }
-        sup {
-            font-size: 0.7em;
-            color: #586069;
-            vertical-align: super;
+        .whatsapp:hover {
+            background-color: #1DA851; /* أخضر أغمق عند التحويم */
+        }
+
+        .email {
+            background-color: var(--email-red);
+            color: white;
+        }
+        .email:hover {
+            background-color: #C23321; /* أحمر أغمق عند التحويم */
+        }
+
+        /* تعديلات للخطوط على الشاشات الصغيرة */
+        @media (max-width: 600px) {
+            body {
+                padding: 20px 10px;
+            }
+            .contact-card {
+                padding: 30px 20px;
+            }
+            .developer-name {
+                font-size: 1.8em;
+            }
+            .contact-item {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
+            .contact-item i {
+                font-size: 1.4em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>⚖️ منصة المحامي الشاملة: حلول رقمية متكاملة لإدارة مكاتب المحاماة العصرية 🚀</h1>
+    <div class="contact-card">
+        <h1 class="developer-name">سعد أبو شندي</h1>
+        <p style="color: var(--text-secondary); font-size: 1.1em;">
+            يسعدني تواصلكم معي بخصوص استفساراتكم أو مشاريعكم البرمجية.
+        </p>
 
-        <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/dashboard.png" alt="Dashboard Screenshot">
-        <span class="screenshot-caption">لقطة شاشة: لوحة التحكم الرئيسية توفر نظرة عامة فورية على أداء المكتب.<sup></sup></span>
-
-        <p>منصة المحامي الشاملة هي نظام إلكتروني متقدم مصمم خصيصًا لتلبية الاحتياجات المتزايدة لمكاتب المحاماة الحديثة والمحامين الأفراد. توفر المنصة مجموعة واسعة من الأدوات والميزات التي تهدف إلى تبسيط العمليات اليومية، تعزيز الإنتاجية، وتحسين إدارة القضايا والوثائق والمعاملات المالية بشكل فعال وآمن.</p>
-
-        <hr>
-
-        <h2>🎬 شاهد فيديو الشرح التفصيلي للمنصة</h2>
-        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
-            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-                src="https://www.canva.com/design/DAGtcFz0bOU/oBt5YdTGktz5bYWuu0C8UQ/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-            </iframe>
+        <div class="contact-info">
+            <a href="https://wa.me/+962775379898" target="_blank" class="contact-item whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>+962775379898</span>
+            </a>
+            <a href="mailto:saad.abushendi@gmail.com" class="contact-item email">
+                <i class="fas fa-envelope"></i>
+                <span>saad.abushendi@gmail.com</span>
+            </a>
         </div>
-        <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGtcFz0bOU&#x2F;oBt5YdTGktz5bYWuu0C8UQ&#x2F;watch?utm_content=DAGtcFz0bOU&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">فيديو توضيحي: منصة إدارة مكاتب المحاماة الشاملة</a>
-
-        <hr>
-
-        <h2>✨ الميزات الرئيسية للبرنامج</h2>
-        <ul>
-            <li>
-                **لوحة تحكم ذكية وشاملة:** نظرة عامة فورية على أهم المؤشرات (القضايا النشطة والمغلقة، المهام المعلقة، المستحقات المالية)، مع رسوم بيانية تفاعلية وعرض سريع للجلسات والمواعيد القادمة والمهام المعلقة.<sup></sup>
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/dashboard-details.png" alt="Dashboard Details Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: ملخص الأداء في لوحة التحكم.<sup></sup></span>
-            </li>
-            <li>
-                **إدارة قضايا مرنة ومتكاملة:** نظام شامل لإضافة وتعديل وحذف القضايا العادية وقضايا الشركات والمؤسسات.<sup></sup>
-                <ul>
-                    <li>إمكانية ربط القضايا بجهات متعددة (عملاء، خصوم، محامين) وتفاصيل المحاكم وأنواع القضايا.<sup></sup></li>
-                    <li>وظائف بحث وتصفية متقدمة حسب حالة القضية، المحامي، أو معلومات الأطراف.<sup></sup></li>
-                    <li>دعم لطباعة التقارير وتصديرها إلى صيغة PDF مباشرة من جداول القضايا.<sup></sup></li>
-                    <li>عرض بيانات القضايا المالية وقضايا الشركات في هيكل شجري لتنظيم وتتبع سهل.<sup></sup></li>
-                </ul>
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/case-management.png" alt="Case Management Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: إدارة القضايا مع خيارات البحث والفلترة والطباعة والتصدير.<sup></sup></span>
-
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/company-case-management.png" alt="Company Case Management Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: إدارة قضايا الشركات والمؤسسات.<sup></sup></span>
-
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/court-case-tree.png" alt="Court Case Tree View Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: لوحة البيانات الشجرية لتنظيم مرئي للقضايا.<sup></sup></span>
-            </li>
-            <li>
-                **إدارة مالية دقيقة:** تسجيل وتتبع الدفعات الواردة والمصروفات الصادرة والمعاملات المستحقة.<sup></sup>
-                <ul>
-                    <li>ملخص مالي يعرض إجمالي الإيرادات والمصروفات وصافي الرصيد والمبالغ المستحقة للتحصيل.<sup></sup></li>
-                    <li>فلاتر وبحث شاملة لتسهيل العثور على المعاملات المالية.<sup></sup></li>
-                </ul>
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/financial-transactions.png" alt="Financial Transactions Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: لوحة الدفعات المالية مع ملخصات وفلاتر.<sup></sup></span>
-            </li>
-            <li>
-                **إدارة المهام والمواعيد الفعالة:** نظام لتتبع المهام مع حالات "معلقة"، "قيد التنفيذ"، و"مكتملة"، وتحديد الأولويات وتواريخ الاستحقاق.<sup></sup>
-                <ul>
-                    <li>جدولة المواعيد وتعيينها للمحامين المعنيين مع تفاصيل القضية والموقع.<sup></sup></li>
-                </ul>
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/tasks-appointments.png" alt="Tasks Appointments Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: لوحة المهام والمواعيد مع ملخصات الحالة.<sup></sup></span>
-            </li>
-            <li>
-                **إدارة وثائق متطورة:** قدرة على رفع الوثائق بأنواعها وتصنيفها وربطها بالقضايا.<sup></sup>
-                <ul>
-                    <li>دعم لالتقاط الصور مباشرة عبر الكاميرا، مع أدوات مدمجة لقص الصور وتطبيق الفلاتر (أبيض وأسود، تدرج رمادي).<sup></sup></li>
-                    <li>وظيفة السحب والإفلات لسهولة رفع الملفات.<sup></sup></li>
-                </ul>
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/document-management.png" alt="Document Management Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: إدارة الوثائق مع خيارات الرفع والالتقاط والبحث.<sup></sup></span>
-            </li>
-            <li>
-                **إدارة مستخدمين وصلاحيات قوية:** نظام أدوار وصلاحيات دقيق (Role-Based Access Control) يضمن التحكم الكامل في وصول المستخدمين للميزات والبيانات.<sup></sup>
-            </li>
-            <li>
-                **تقارير وتحليلات معمقة:** تقارير مالية تفصيلية تعرض ملخصات للإيرادات والمصروفات، واتجاهات شهرية، وتوزيع المصروفات حسب الفئة.<sup></sup>
-                <ul>
-                    <li>رسوم بيانية جذابة وتفاعلية لمساعدة المستخدمين على فهم البيانات بسرعة.<sup></sup></li>
-                </ul>
-                <img src="https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/reports.png" alt="Reports Screenshot">
-                <span class="screenshot-caption">لقطة شاشة: لوحة التقارير والتحليلات تعرض رسومًا بيانية مالية.<sup></sup></span>
-            </li>
-        </ul>
-
-        <hr>
-
-        <h2>💻 المكدس التقني (Technical Stack)</h2>
-        <ul>
-            <li><strong>الواجهة الأمامية (Frontend):</strong>
-                <ul>
-                    <li><a href="https://react.dev/" target="_blank">React.js</a> - مكتبة JavaScript لبناء واجهات المستخدم.<sup></sup></li>
-                    <li><a href="https://mui.com/" target="_blank">Material-UI (MUI)</a> - مكتبة مكونات React لتصميم واجهة المستخدم.<sup></sup></li>
-                    <li><code>date-fns</code> - لأدوات التعامل مع التواريخ.<sup></sup></li>
-                    <li><code>recharts</code> - لمكونات الرسوم البيانية التفاعلية.<sup></sup></li>
-                    <li><code>react-easy-crop</code> - لأدوات قص وتعديل الصور.<sup></sup></li>
-                    <li><code>jspdf</code> و <code>html2canvas</code> - لتوليد مستندات PDF من محتوى HTML.<sup></sup></li>
-                    <li><code>react-to-print</code> - لطباعة المكونات مباشرة من المتصفح.<sup></sup></li>
-                </ul>
-            </li>
-            <li><strong>الواجهة الخلفية وقاعدة البيانات (Backend & Database):</strong>
-                <ul>
-                    <li><a href="https://firebase.google.com/docs/firestore" target="_blank">Firebase Firestore</a> - قاعدة بيانات NoSQL سحابية في الوقت الفعلي.<sup></sup></li>
-                    <li><a href="https://firebase.google.com/docs/auth" target="_blank">Firebase Authentication</a> - لخدمات مصادقة المستخدمين الآمنة.<sup></sup></li>
-                    <li><a href="https://firebase.google.com/docs/storage" target="_blank">Firebase Storage</a> - لتخزين ملفات المستخدمين والوثائق.<sup></sup></li>
-                    <li><a href="https://firebase.google.com/docs/functions" target="_blank">Firebase Cloud Functions</a> - لتشغيل شيفرة الواجهة الخلفية الخالية من الخوادم (مثل تعيين الصلاحيات المخصصة للمستخدمين أو عمليات ترحيل الملفات).<sup></sup></li>
-                </ul>
-            </li>
-            <li><strong>أدوات مساعدة (Utilities):</strong>
-                <ul>
-                    <li>Hooks مخصصة لإدارة حالة التحميل، الملخصات المالية والقضائية، والمهام والمواعيد القادمة.<sup></sup></li>
-                    <li><code>useDebounce</code> - لتحسين أداء عمليات البحث.<sup></sup></li>
-                </ul>
-            </li>
-        </ul>
-
-        <hr>
-
-        <h2>💪 نقاط القوة والمزايا التنافسية</h2>
-        <ol>
-            <li>
-                **بنية تقنية حديثة وقوية (Firebase & React):**
-                <ul>
-                    <li>يعتمد البرنامج على <strong>React</strong> في الواجهة الأمامية، مما يوفر تجربة مستخدم سريعة وتفاعلية.<sup></sup></li>
-                    <li>يستخدم <strong>Firebase</strong> كخدمة خلفية (Backend-as-a-Service)، بما في ذلك Firestore لقاعدة البيانات في الوقت الفعلي، Firebase Authentication للمصادقة القوية، وFirebase Storage لتخزين الوثائق، وCloud Functions للمنطق الخلفي، مما يضمن قابلية التوسع والأمان وتقليل تكاليف الصيانة.<sup></sup></li>
-                    <li>الاعتماد على Material-UI لتصميم واجهة المستخدم يضمن تصميمًا عصريًا ومتجاوبًا (Responsive Design) يعمل بسلاسة على مختلف الأجهزة.<sup></sup></li>
-                </ul>
-            </li>
-            <li>
-                **تجربة مستخدم محسّنة (UX/UI):**
-                <ul>
-                    <li>**واجهة مستخدم بديهية وواضحة:** تصميم يراعي سهولة الاستخدام، مع أيقونات معبرة وتنظيم منطقي للمعلومات.<sup></sup></li>
-                    <li>**دعم كامل للغة العربية (RTL):** تم بناء التطبيق بالكامل لدعم اللغة العربية من حيث الاتجاه والتنسيق، مما يجعله مناسبًا تمامًا للمستخدمين العرب.<sup></sup></li>
-                    <li>**تحديثات فورية:** بفضل Firestore، يتم تحديث البيانات في الوقت الفعلي عبر التطبيق، مما يضمن حصول المستخدمين دائمًا على أحدث المعلومات.<sup></sup></li>
-                </ul>
-            </li>
-            <li>
-                **أمان ومرونة في الصلاحيات:**
-                <ul>
-                    <li>**نظام صلاحيات مفصل:** يتيح للمسؤولين التحكم بدقة في ما يمكن لكل مستخدم رؤيته أو فعله، مما يعزز الأمان ويضمن خصوصية البيانات الحساسة.<sup></sup></li>
-                    <li>**تحكم في الوصول للملفات:** صلاحيات محددة لرفع وتعديل وحذف وعرض الوثائق.<sup></sup></li>
-                </ul>
-            </li>
-            <li>
-                **كفاءة في التعامل مع البيانات:**
-                <ul>
-                    <li>**تحميل البيانات بكفاءة:** استخدام "lazy loading" للمكونات الكبيرة و"debouncing" لحقول البحث،<sup></sup> بالإضافة إلى تقنيات التحميل اللانهائي للبيانات (pagination with <code>startAfter</code>) لتحسين الأداء عند التعامل مع كميات كبيرة من المعلومات.<sup></sup></li>
-                    <li>**تخزين آمن للوثائق:** استخدام Firebase Storage لتخزين الوثائق بشكل موثوق وآمن.<sup></sup></li>
-                </ul>
-            </li>
-            <li>
-                **أدوات تحليلية قوية:**
-                <ul>
-                    <li>**تقارير ورسوم بيانية ذكية:** توفر تحليلات مرئية سهلة الفهم حول الأداء المالي وحالة القضايا، مما يساعد في اتخاذ قرارات مبنية على البيانات.<sup></sup></li>
-                    <li>**عرض البيانات الشجري:** طريقة فريدة لتنظيم وعرض البيانات المعقدة (القضايا، المعاملات المالية، قضايا الشركات) في هيكل شجري منطقي، مما يسهل التنقل والفهم.<sup></sup></li>
-                </ul>
-            </li>
-        </ol>
-
-        <hr>
-
-        <h2>🚀 البدء السريع (للمطورين)</h2>
-        <p>للبدء بتشغيل المشروع محليًا، اتبع الخطوات التالية:</p>
-        <ol>
-            <li>
-                <p><strong>استنساخ المستودع:</strong></p>
-                <pre><code>git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-</code></pre>
-            </li>
-            <li>
-                <p><strong>تثبيت التبعيات:</strong></p>
-                <pre><code>npm install
-# أو
-yarn install
-</code></pre>
-            </li>
-            <li>
-                <p><strong>إعداد Firebase:</strong></p>
-                <ul>
-                    <li>أنشئ مشروع Firebase جديدًا على <a href="https://console.firebase.google.com/" target="_blank">Firebase Console</a>.</li>
-                    <li>قم بتمكين Firestore Database, Authentication, وCloud Storage.</li>
-                    <li>أضف تطبيق ويب إلى مشروعك واحصل على <code>firebaseConfig</code> الخاص بك.</li>
-                    <li>أنشئ ملفًا جديدًا باسم <code>.env.local</code> في الجذر الرئيسي للمشروع (بجانب <code>package.json</code>) وأضف متغيرات بيئة Firebase الخاصة بك:
-                        <pre><code>REACT_APP_FIREBASE_API_KEY="YOUR_API_KEY"
-REACT_APP_FIREBASE_AUTH_DOMAIN="YOUR_AUTH_DOMAIN"
-REACT_APP_FIREBASE_PROJECT_ID="YOUR_PROJECT_ID"
-REACT_APP_FIREBASE_STORAGE_BUCKET="YOUR_STORAGE_BUCKET"
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID="YOUR_MESSAGING_SENDER_ID"
-REACT_APP_FIREBASE_APP_ID="YOUR_APP_ID"
-</code></pre>
-                        (تأكد أن <code>firebaseConfig.js</code> يستخدم <code>process.env.REACT_APP_...</code> للحصول على هذه القيم)<sup></sup>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <p><strong>تشغيل التطبيق:</strong></p>
-                <pre><code>npm start
-# أو
-yarn start
-</code></pre>
-                <p>سيتم فتح التطبيق في متصفحك على <code>http://localhost:3000</code>.</p>
-            </li>
-            <li>
-                <p><strong>تعبئة البيانات التجريبية (اختياري لكن موصى به):</strong></p>
-                <p>بعد تسجيل الدخول لأول مرة، يمكنك الانتقال إلى صفحة "بيانات تجريبية" لملء قاعدة البيانات ببيانات افتراضية تساعدك في استكشاف الميزات. <strong>ملاحظة هامة:</strong> ملفات <code>src/data/seed...js</code> هي لغايات التطوير والاختبار ولا يجب استخدامها مباشرة في بيئات الإنتاج لتعرض بيانات المصادقة في بعض الأحيان.<sup></sup></p>
-            </li>
-        </ol>
-
-        <hr>
-
-        <h2>🤝 المساهمة</h2>
-        <p>نرحب بالمساهمات! إذا كنت ترغب في تحسين هذا المشروع، يرجى قراءة <a href="CONTRIBUTING.md" target="_blank">CONTRIBUTING.md</a> (ملف افتراضي تحتاج لإنشائه لاحقًا) للحصول على إرشادات حول كيفية إرسال طلبات السحب.</p>
-
-        <hr>
-
-        <h2>📄 الترخيص</h2>
-        <p>هذا المشروع مرخص بموجب ترخيص MIT. انظر ملف <a href="LICENSE" target="_blank">LICENSE</a> (ملف افتراضي تحتاج لإنشائه لاحقًا) للحصول على مزيد من التفاصيل.</p>
-
-        <hr>
-
-        <h2>📧 الدعم والتواصل</h2>
-        <p>لأية استفسارات أو دعم، يمكنك التواصل عبر:</p>
-        <ul>
-            <li>البريد الإلكتروني: <a href="mailto:your-email@example.com">your-email@example.com</a></li>
-            <li>الملف الشخصي على GitHub: <a href="https://github.com/your-username" target="_blank">your-username</a></li>
-        </ul>
-
-        <hr>
-
-        <blockquote>
-            <p><strong>ملاحظة:</strong> يرجى استبدال <code>your-username</code> و <code>your-repo-name</code> و <code>your-email@example.com</code> بالمعلومات الصحيحة الخاصة بك. ستحتاج أيضًا إلى إنشاء مجلد <code>screenshots</code> في جذر المستودع الخاص بك ووضع الصور بداخله، ثم تحديث المسارات في Markdown لتطابق المسارات النهائية على GitHub (مثل <code>https://raw.githubusercontent.com/your-username/your-repo-name/main/screenshots/dashboard.png</code>).</p>
-        </blockquote>
     </div>
 </body>
 </html>
