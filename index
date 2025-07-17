@@ -3,143 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل مع المطور: سعد أبو شندي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>منصة المحامي الشاملة - حلول رقمية متكاملة لمكاتب المحاماة</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            /* الألوان مستوحاة من ثيم مشروعك Material-UI */
-            --primary-color: #024684; /* أزرق داكن */
-            --secondary-color: #a7a9ad; /* رمادي */
-            --success-color: #3EB75E; /* أخضر */
-            --text-primary: #192335; /* أسود مزرق */
-            --text-secondary: #6b7385; /* رمادي أغمق */
-            --background-default: #f9f9f9;
-            --background-paper: #ffffff;
-            --whatsapp-green: #25D366;
-            --email-red: #DB4437;
-        }
-
-        body {
-            font-family: 'Cairo', sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            background-color: var(--background-default);
-            color: var(--text-primary);
-            line-height: 1.6;
-            direction: rtl;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .contact-card {
-            background-color: var(--background-paper);
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0px 8px 25px rgba(37, 47, 63, 0.15); /* ظل احترافي وبارز */
-            text-align: center;
-            max-width: 500px;
-            width: 100%;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0px 12px 35px rgba(37, 47, 63, 0.25); /* ظل أكبر عند التحويم */
-        }
-
-        .developer-name {
-            font-size: 2.2em;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        .contact-info {
-            margin-top: 30px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            font-size: 1.1em;
-            font-weight: 600;
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 15px 25px;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .contact-item i {
-            font-size: 1.6em;
-        }
-
-        .whatsapp {
-            background-color: var(--whatsapp-green);
-            color: white;
-        }
-        .whatsapp:hover {
-            background-color: #1DA851; /* أخضر أغمق عند التحويم */
-        }
-
-        .email {
-            background-color: var(--email-red);
-            color: white;
-        }
-        .email:hover {
-            background-color: #C23321; /* أحمر أغمق عند التحويم */
-        }
-
-        /* تعديلات للخطوط على الشاشات الصغيرة */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 10px;
-            }
-            .contact-card {
-                padding: 30px 20px;
-            }
-            .developer-name {
-                font-size: 1.8em;
-            }
-            .contact-item {
-                font-size: 1em;
-                padding: 12px 20px;
-            }
-            .contact-item i {
-                font-size: 1.4em;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="contact-card">
-        <h1 class="developer-name">سعد أبو شندي</h1>
-        <p style="color: var(--text-secondary); font-size: 1.1em;">
-            يسعدني تواصلكم معي بخصوص استفساراتكم أو مشاريعكم البرمجية.
-        </p>
-
-        <div class="contact-info">
-            <a href="https://wa.me/+962775379898" target="_blank" class="contact-item whatsapp">
-                <i class="fab fa-whatsapp"></i>
-                <span>+962775379898</span>
-            </a>
-            <a href="mailto:saad.abushendi@gmail.com" class="contact-item email">
-                <i class="fas fa-envelope"></i>
-                <span>saad.abushendi@gmail.com</span>
-            </a>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/1.png" alt="شعار منصة المحامي الشاملة" class="logo-main-image">
+                    <h1>منصة المحامي الشاملة</h1>
+                </div>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#features">المميزات</a></li>
+                    <li><a href="#screenshots">معرض الصور</a></li>
+                    <li><a href="#video">فيديو توضيحي</a></li>
+                    <li><a href="#contact">تواصل معنا</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>حلول رقمية متكاملة لإدارة مكاتب المحاماة العصرية</h2>
+                    <p>منصة المحامي الشاملة هي نظام إلكتروني متقدم مصمم خصيصًا لتلبية الاحتياجات المتزايدة لمكاتب المحاماة الحديثة والمحامين الأفراد. توفر المنصة مجموعة واسعة من الأدوات والميزات التي تهدف إلى تبسيط العمليات اليومية، تعزيز الإنتاجية، وتحسين إدارة القضايا والوثائق والمعاملات المالية بشكل فعال وآمن.</p>
+                    <a href="#features" class="btn btn-primary">اكتشف المميزات</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/2.png" alt="واجهة لوحة التحكم">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <div class="container">
+                <h2>الميزات الرئيسية للبرنامج</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3><i class="fas fa-tachometer-alt"></i> لوحة تحكم ذكية وشاملة</h3>
+                        <ul>
+                            <li>نظرة عامة فورية على أهم المؤشرات (القضايا النشطة والمغلقة، المهام المعلقة، المستحقات المالية).</li>
+                            <li>رسوم بيانية تفاعلية لتوزيع حالة القضايا والملخص المالي لسهولة التحليل.</li>
+                            <li>عرض سريع للجلسات والمواعيد القادمة والمهام المعلقة.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-gavel"></i> إدارة قضايا مرنة ومتكاملة</h3>
+                        <ul>
+                            <li>نظام شامل لإضافة وتعديل وحذف القضايا العادية وقضايا الشركات والمؤسسات.</li>
+                            <li>إمكانية ربط القضايا بجهات متعددة (عملاء، خصوم، محامين) وتفاصيل المحاكم وأنواع القضايا.</li>
+                            <li>وظائف بحث وتصفية متقدمة حسب حالة القضية، المحامي، أو معلومات الأطراف.</li>
+                            <li>عرض تفصيلي للقضايا المتداخلة والمرتبطة لسهولة التتبع.</li>
+                            <li>دعم لطباعة التقارير وتصديرها إلى صيغة PDF مباشرة من جداول القضايا.</li>
+                            <li>عرض بيانات القضايا المالية وقضايا الشركات في هيكل شجري لتنظيم وتتبع سهل.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-dollar-sign"></i> إدارة مالية دقيقة</h3>
+                        <ul>
+                            <li>تسجيل وتتبع الدفعات الواردة والمصروفات الصادرة والمعاملات المستحقة.</li>
+                            <li>ملخص مالي يعرض إجمالي الإيرادات والمصروفات وصافي الرصيد والمبالغ المستحقة للتحصيل.</li>
+                            <li>فلاتر وبحث شاملة لتسهيل العثور على المعاملات المالية.</li>
+                            <li>تصنيفات محددة للدفعات والمصروفات لتحليل مالي دقيق.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-calendar-alt"></i> إدارة المهام والمواعيد الفعالة</h3>
+                        <ul>
+                            <li>نظام لتتبع المهام مع حالات "معلقة"، "قيد التنفيذ"، و"مكتملة"، وتحديد الأولويات وتواريخ الاستحقاق.</li>
+                            <li>جدولة المواعيد وتعيينها للمحامين المعنيين مع تفاصيل القضية والموقع.</li>
+                            <li>ملخصات سريعة لعدد المهام المكتملة والمعلقة والمتأخرة، بالإضافة إلى المواعيد القادمة والسابقة.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-folder-open"></i> إدارة وثائق متطورة</h3>
+                        <ul>
+                            <li>قدرة على رفع الوثائق بأنواعها وتصنيفها وربطها بالقضايا.</li>
+                            <li>دعم لالتقاط الصور مباشرة عبر الكاميرا، مع أدوات مدمجة لقص الصور وتطبيق الفلاتر (أبيض وأسود، تدرج رمادي).</li>
+                            <li>وظيفة السحب والإفلات لسهولة رفع الملفات.</li>
+                            <li>بحث وفلترة شاملة للوثائق حسب الاسم والوصف والنوع والتصنيف والقضية المرتبطة.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-users-cog"></i> إدارة مستخدمين وصلاحيات قوية</h3>
+                        <ul>
+                            <li>نظام أدوار وصلاحيات دقيق (Role-Based Access Control) يضمن التحكم الكامل في وصول المستخدمين للميزات والبيانات.</li>
+                            <li>تحديد أدوار مثل "مدير نظام"، "مدير مكتب"، "محامي"، و"سكرتير"، مع صلاحيات مخصصة لكل دور.</li>
+                            <li>إدارة حالات قبول المستخدمين الجدد (قيد الانتظار، مقبول، مرفوض).</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-chart-line"></i> تقارير وتحليلات معمقة</h3>
+                        <ul>
+                            <li>تقارير مالية تفصيلية تعرض ملخصات للإيرادات والمصروفات، واتجاهات شهرية، وتوزيع المصروفات حسب الفئة.</li>
+                            <li>تقارير خاصة بالقضايا تظهر توزيع القضايا حسب الحالة والنوع.</li>
+                            <li>رسوم بيانية جذابة وتفاعلية لمساعدة المستخدمين على فهم البيانات بسرعة.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-cogs"></i> إعدادات عامة سهلة الاستخدام</h3>
+                        <ul>
+                            <li>إمكانية تخصيص رمز العملة المستخدم في جميع أنحاء التطبيق.</li>
+                            <li>واجهة لتعديل الصلاحيات الخاصة بكل دور بسهولة.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3><i class="fas fa-flask"></i> بيانات تجريبية لسهولة البدء</h3>
+                        <ul>
+                            <li>أدوات مدمجة لإضافة مجموعات كاملة من البيانات التجريبية (أدوار، محاكم، عملاء، قضايا، معاملات، جلسات، شركات) لغايات العرض أو التطوير.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>نقاط القوة والمزايا التنافسية</h2>
+                <div class="features-grid">
+                    <div class="feature-item competitive-advantage">
+                        <h3><i class="fas fa-code-branch"></i> بنية تقنية حديثة وقوية (Firebase & React)</h3>
+                        <ul>
+                            <li>يعتمد البرنامج على React في الواجهة الأمامية، مما يوفر تجربة مستخدم سريعة وتفاعلية.</li>
+                            <li>يستخدم Firebase كخدمة خلفية (Backend-as-a-Service)، بما في ذلك Firestore لقاعدة البيانات في الوقت الفعلي، Firebase Authentication للمصادقة القوية، وFirebase Storage لتخزين الوثائق، وCloud Functions للمنطق الخلفي، مما يضمن قابلية التوسع والأمان وتقليل تكاليف الصيانة.</li>
+                            <li>الاعتماد على Material-UI لتصميم واجهة المستخدم يضمن تصميمًا عصريًا ومتجاوبًا (Responsive Design) يعمل بسلاسة على مختلف الأجهزة.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item competitive-advantage">
+                        <h3><i class="fas fa-user-check"></i> تجربة مستخدم محسّنة (UX/UI)</h3>
+                        <ul>
+                            <li>واجهة مستخدم بديهية وواضحة: تصميم يراعي سهولة الاستخدام، مع أيقونات معبرة وتنظيم منطقي للمعلومات.</li>
+                            <li>دعم كامل للغة العربية (RTL): تم بناء التطبيق بالكامل لدعم اللغة العربية من حيث الاتجاه والتنسيق، مما يجعله مناسبًا تمامًا للمستخدمين العرب.</li>
+                            <li>تحديثات فورية: بفضل Firestore، يتم تحديث البيانات في الوقت الفعلي عبر التطبيق، مما يضمن حصول المستخدمين دائمًا على أحدث المعلومات.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item competitive-advantage">
+                        <h3><i class="fas fa-shield-alt"></i> أمان ومرونة في الصلاحيات</h3>
+                        <ul>
+                            <li>نظام صلاحيات مفصل: يتيح للمسؤولين التحكم بدقة في ما يمكن لكل مستخدم رؤيته أو فعله، مما يعزز الأمان ويضمن خصوصية البيانات الحساسة.</li>
+                            <li>تحكم في الوصول للملفات: صلاحيات محددة لرفع وتعديل وحذف وعرض الوثائق.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item competitive-advantage">
+                        <h3><i class="fas fa-database"></i> كفاءة في التعامل مع البيانات</h3>
+                        <ul>
+                            <li>تحميل البيانات بكفاءة: استخدام "lazy loading" للمكونات الكبيرة و"debouncing" لحقول البحث، بالإضافة إلى تقنيات التحميل اللانهائي للبيانات (pagination with startAfter) لتحسين الأداء عند التعامل مع كميات كبيرة من المعلومات.</li>
+                            <li>تخزين آمن للوثائق: استخدام Firebase Storage لتخزين الوثائق بشكل موثوق وآمن.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item competitive-advantage">
+                        <h3><i class="fas fa-chart-pie"></i> أدوات تحليلية قوية</h3>
+                        <ul>
+                            <li>تقارير ورسوم بيانية ذكية: توفر تحليلات مرئية سهلة الفهم حول الأداء المالي وحالة القضايا، مما يساعد في اتخاذ قرارات مبنية على البيانات.</li>
+                            <li>عرض البيانات الشجري: طريقة فريدة لتنظيم وعرض البيانات المعقدة (القضايا، المعاملات المالية، قضايا الشركات) في هيكل شجري منطقي، مما يسهل التنقل والفهم.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="why-choose-us">
+                    <h2>لماذا تختار منصة المحامي الشاملة؟</h2>
+                    <p>منصة المحامي الشاملة هي استثمار في مستقبل مكتبك القانوني. بفضل تصميمها الحديث، وميزاتها الشاملة، وبنيتها التحتية القوية، ستساعدك المنصة على:</p>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>زيادة الإنتاجية:</strong> تبسيط العمليات وتوفير الوقت للمحامين والموظفين.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>تحسين الدقة:</strong> تقليل الأخطاء البشرية في إدارة البيانات المالية والقانونية.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>تعزيز الأمان:</strong> حماية معلوماتك الحساسة من خلال نظام صلاحيات متقدم.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>اتخاذ قرارات أفضل:</strong> بفضل التقارير والتحليلات الشاملة التي توفرها المنصة.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>تقديم خدمة عملاء استثنائية:</strong> تنظيم معلومات العملاء والقضايا يتيح استجابة أسرع وأكثر فعالية.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="screenshots-section">
+            <div class="container">
+                <h2>معرض الصور</h2>
+                <div class="screenshot-grid">
+                    <img src="images/2.png" alt="إدارة القضايا">
+                    <img src="images/4.png" alt="الدفعات المالية">
+                    <img src="images/8.png" alt="لوحة التقارير والتحليلات">
+                    <img src="images/1.png" alt="لوحة التحكم الرئيسية">
+                    <img src="images/9.png" alt="أرشفة الوثائق">
+                    <img src="images/5.png" alt="إدارة قضايا الشركات والمؤسسات">
+                    <img src="images/7.png" alt="إدارة الوثائق">
+                    <img src="images/3.png" alt="لوحة البيانات الشجرية">
+                    <img src="images/6.png" alt="المهام والمواعيد">
+                </div>
+            </div>
+        </section>
+
+        <section id="video" class="video-section">
+            <div class="container">
+                <h2>فيديو توضيحي للمنصة</h2>
+                <div class="video-wrapper">
+                    <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+                     padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+                     border-radius: 8px; will-change: transform;">
+                      <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                        src="https://www.canva.com/design/DAGtcFz0bOU/oBt5YdTGktz5bYWuu0C8UQ/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                      </iframe>
+                    </div>
+                </div>
+                <p class="video-call-to-action">اكتشف المزيد عن مميزات المنصة من خلال الفيديو التوضيحي الشامل.</p>
+                <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGtcFz0bOU&#x2F;oBt5YdTGktz5bYWuu0C8UQ&#x2F;watch?utm_content=DAGtcFz0bOU&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="canva-link">شاهد الفيديو على Canva</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>جاهز لترقية مكتبك القانوني؟</h2>
+                <p>اكتشف كيف يمكن لمنصة المحامي الشاملة أن تحدث ثورة في سير عملك. تواصل معنا اليوم للحصول على عرض توضيحي مجاني!</p>
+                <div class="contact-info">
+                    <a href="https://wa.me/962775379898" target="_blank" class="contact-item whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>تواصل عبر واتساب</span>
+                        <span>+962775379898</span>
+                    </a>
+                    <a href="tel:+962775379898" class="contact-item phone">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>اتصال هاتفي</span>
+                        <span>+962775379898</span>
+                    </a>
+                    <a href="mailto:saad.abushendi@gmail.com" class="contact-item email">
+                        <i class="fas fa-envelope"></i>
+                        <span>البريد الإلكتروني</span>
+                        <span>saad.abushendi@gmail.com</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 منصة المحامي الشاملة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
