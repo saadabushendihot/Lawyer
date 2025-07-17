@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let current = '';
         sections.forEach(section => {
             // Add a buffer to ensure section becomes active slightly before it reaches the very top
-            const sectionTop = section.offsetTop - headerHeight - 50;
+            const sectionTop = section.offsetTop - headerHeight - 50; 
             const sectionHeight = section.clientHeight;
             if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
@@ -50,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Logic for hiding/showing header on scroll
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Hide header if scrolling down and past the header's initial height
         if (scrollTop > lastScrollTop && scrollTop > headerHeight) {
+            // Scrolling down and past the header height, hide the header
             headerElement.classList.add('header-hidden');
         } else {
-            // Show header if scrolling up or at the very top of the page
+            // Scrolling up or at the very top, show the header
             headerElement.classList.remove('header-hidden');
         }
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
