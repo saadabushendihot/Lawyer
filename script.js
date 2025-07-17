@@ -8,8 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.getElementById(targetId);
 
             if (targetElement) {
+                // Adjust for fixed header height
+                const headerOffset = document.querySelector('header').offsetHeight;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - headerOffset;
+
                 window.scrollTo({
-                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight, // Adjust for fixed header
+                    top: offsetPosition,
                     behavior: 'smooth'
                 });
             }
@@ -19,13 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Optional: Add an active class to nav links based on scroll position
     const sections = document.querySelectorAll('section');
     const navLi = document.querySelectorAll('nav ul li');
+    const headerHeight = document.querySelector('header').offsetHeight;
 
     window.addEventListener('scroll', () => {
         let current = '';
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight;
+            // Add a buffer to ensure section becomes active slightly before it reaches the very top
+            const sectionTop = section.offsetTop - headerHeight - 50; 
             const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 50 && pageYOffset < sectionTop + sectionHeight) {
+            if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
                 current = section.getAttribute('id');
             }
         });
