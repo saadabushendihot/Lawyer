@@ -87,6 +87,11 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: transform 0.3s ease-out; /* Added for smooth hiding/showing */
+}
+
+.header-hidden {
+    transform: translateY(-100%); /* Hides the header by moving it up */
 }
 
 nav {
@@ -549,8 +554,7 @@ footer {
         width: 100%;
         text-align: center;
         justify-content: center;
-        /* Added to prevent overlap if nav height is too large */
-        padding-bottom: 20px; /* Add some space below the nav items */
+        padding-bottom: 20px;
     }
     nav ul li {
         margin: 8px 0;
