@@ -282,13 +282,14 @@ nav ul li a:hover::after {
     color: var(--primary-color);
 }
 
-/* --- START WHY CHOOSE US SECTION - LTR OVERRIDE --- */
+/* --- WHY CHOOSE US SECTION - Corrected RTL --- */
 .why-choose-us {
     background-color: var(--white);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 60px;
+    /* direction and text-align are inherited from body, ensuring RTL */
 }
 
 .why-choose-us h2 {
@@ -304,14 +305,14 @@ nav ul li a:hover::after {
 .why-choose-us p {
     font-size: 1.1em;
     margin-bottom: 30px;
-    text-align: right;
+    text-align: right; /* Ensure paragraph aligns right */
 }
 
 .why-choose-us ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: right;
+    text-align: right; /* Ensure list itself aligns right */
     width: 100%;
 }
 
@@ -319,27 +320,27 @@ nav ul li a:hover::after {
     font-size: 1.05em;
     margin-bottom: 15px;
     display: flex;
-    align-items: flex-start;
+    align-items: flex-start; /* Align icon and text to the top for better visual flow */
     gap: 10px;
     color: var(--text-color);
-    justify-content: flex-end;
-    padding-left: 0;
-    padding-right: 25px;
-    flex-direction: row-reverse;
+    justify-content: flex-end; /* Align the content of each list item to the right */
+    padding-left: 0; /* Remove left padding */
+    padding-right: 25px; /* Add space for the checkmark icon on the right */
+    flex-direction: row-reverse; /* Put icon visually to the right of text */
 }
 
 .why-choose-us ul li i {
     color: var(--accent-color);
     font-size: 1.2em;
-    margin-right: 0;
-    margin-left: 5px;
-    order: 2;
+    margin-left: 5px; /* Space between icon and text (on icon's left in RTL) */
+    margin-right: 0; /* No margin on right */
+    order: 2; /* Icon appears second in flex order, placing it visually to the right due to row-reverse */
 }
 
 .why-choose-us ul li strong {
-    order: 1;
+    order: 1; /* Text appears first in flex order, placing it visually to the left of the icon */
 }
-/* --- END WHY CHOOSE US SECTION - LTR OVERRIDE --- */
+/* --- END WHY CHOOSE US SECTION --- */
 
 
 /* Screenshots Section */
@@ -641,34 +642,34 @@ footer {
         margin-right: 0;
     }
 
-    /* --- START WHY CHOOSE US SECTION - Mobile LTR adjustments --- */
+    /* --- WHY CHOOSE US SECTION - Mobile Adjustments --- */
     .why-choose-us {
-        text-align: center;
+        text-align: center; /* Center the entire section block on mobile */
     }
     .why-choose-us p {
-        text-align: center;
+        text-align: center; /* Center paragraph text on mobile */
     }
     .why-choose-us ul {
-        text-align: center;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+        width: fit-content; /* Allow list to shrink-wrap its content */
+        margin-left: auto; /* Center the list block */
+        margin-right: auto; /* Center the list block */
+        text-align: right; /* Maintain RTL list item alignment */
     }
     .why-choose-us ul li {
-        justify-content: flex-end;
+        justify-content: flex-end; /* Align list items to the right */
         padding-left: 0;
-        padding-right: 25px;
-        flex-direction: row-reverse;
+        padding-right: 25px; /* Space for the icon on the right */
+        flex-direction: row-reverse; /* Icon then text for RTL */
     }
     .why-choose-us ul li i {
-        order: 2;
+        order: 2; /* Icon second */
         margin-right: 0;
-        margin-left: 5px;
+        margin-left: 5px; /* Space after icon */
     }
     .why-choose-us ul li strong {
-        order: 1;
+        order: 1; /* Text first */
     }
-    /* --- END WHY CHOOSE US SECTION - Mobile LTR adjustments --- */
+    /* --- END WHY CHOOSE US SECTION - Mobile Adjustments --- */
 }
 
 @media (max-width: 480px) {
