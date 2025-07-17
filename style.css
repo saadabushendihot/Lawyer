@@ -289,7 +289,6 @@ nav ul li a:hover::after {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 60px;
-    /* direction and text-align are inherited from body, ensuring RTL */
 }
 
 .why-choose-us h2 {
@@ -305,14 +304,14 @@ nav ul li a:hover::after {
 .why-choose-us p {
     font-size: 1.1em;
     margin-bottom: 30px;
-    text-align: right; /* Ensure paragraph aligns right */
+    text-align: right;
 }
 
 .why-choose-us ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: right; /* Ensure list itself aligns right */
+    text-align: right;
     width: 100%;
 }
 
@@ -320,25 +319,25 @@ nav ul li a:hover::after {
     font-size: 1.05em;
     margin-bottom: 15px;
     display: flex;
-    align-items: flex-start; /* Align icon and text to the top for better visual flow */
+    align-items: flex-start;
     gap: 10px;
     color: var(--text-color);
-    justify-content: flex-end; /* Align the content of each list item to the right */
-    padding-left: 0; /* Remove left padding */
-    padding-right: 25px; /* Add space for the checkmark icon on the right */
-    flex-direction: row-reverse; /* Put icon visually to the right of text */
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: 25px;
+    flex-direction: row-reverse;
 }
 
 .why-choose-us ul li i {
     color: var(--accent-color);
     font-size: 1.2em;
-    margin-left: 5px; /* Space between icon and text (on icon's left in RTL) */
-    margin-right: 0; /* No margin on right */
-    order: 2; /* Icon appears second in flex order, placing it visually to the right due to row-reverse */
+    margin-left: 5px;
+    margin-right: 0;
+    order: 2;
 }
 
 .why-choose-us ul li strong {
-    order: 1; /* Text appears first in flex order, placing it visually to the left of the icon */
+    order: 1;
 }
 /* --- END WHY CHOOSE US SECTION --- */
 
@@ -550,6 +549,8 @@ footer {
         width: 100%;
         text-align: center;
         justify-content: center;
+        /* Added to prevent overlap if nav height is too large */
+        padding-bottom: 20px; /* Add some space below the nav items */
     }
     nav ul li {
         margin: 8px 0;
@@ -644,30 +645,30 @@ footer {
 
     /* --- WHY CHOOSE US SECTION - Mobile Adjustments --- */
     .why-choose-us {
-        text-align: center; /* Center the entire section block on mobile */
+        text-align: center;
     }
     .why-choose-us p {
-        text-align: center; /* Center paragraph text on mobile */
+        text-align: center;
     }
     .why-choose-us ul {
-        width: fit-content; /* Allow list to shrink-wrap its content */
-        margin-left: auto; /* Center the list block */
-        margin-right: auto; /* Center the list block */
-        text-align: right; /* Maintain RTL list item alignment */
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: right;
     }
     .why-choose-us ul li {
-        justify-content: flex-end; /* Align list items to the right */
+        justify-content: flex-end;
         padding-left: 0;
-        padding-right: 25px; /* Space for the icon on the right */
-        flex-direction: row-reverse; /* Icon then text for RTL */
+        padding-right: 25px;
+        flex-direction: row-reverse;
     }
     .why-choose-us ul li i {
-        order: 2; /* Icon second */
+        order: 2;
         margin-right: 0;
-        margin-left: 5px; /* Space after icon */
+        margin-left: 5px;
     }
     .why-choose-us ul li strong {
-        order: 1; /* Text first */
+        order: 1;
     }
     /* --- END WHY CHOOSE US SECTION - Mobile Adjustments --- */
 }
