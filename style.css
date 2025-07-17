@@ -222,9 +222,9 @@ nav ul li a:hover::after {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: right;
-    display: flex; /* Use flexbox for icon and title alignment */
-    flex-direction: column; /* Stack icon and title vertically on mobile */
-    align-items: flex-end; /* Align content to the right */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .feature-item h3 {
@@ -236,14 +236,14 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     gap: 10px;
-    flex-direction: row-reverse; /* Put icon on the right for RTL */
+    flex-direction: row-reverse;
 }
 
 .feature-item h3 i {
     color: var(--accent-color);
     font-size: 1.2em;
-    margin-left: 0; /* Remove potential extra margin */
-    margin-right: 5px; /* Add space between icon and text */
+    margin-left: 0;
+    margin-right: 5px;
 }
 
 .feature-item ul {
@@ -251,17 +251,17 @@ nav ul li a:hover::after {
     padding: 0;
     margin: 0;
     text-align: right;
-    width: 100%; /* Ensure list takes full width */
+    width: 100%;
 }
 
 .feature-item ul li {
     margin-bottom: 10px;
     position: relative;
-    padding-right: 25px; /* Space for custom bullet */
+    padding-right: 25px;
 }
 
 .feature-item ul li::before {
-    content: '\f00c'; /* Font Awesome check icon */
+    content: '\f00c';
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     color: var(--accent-color);
@@ -273,7 +273,7 @@ nav ul li a:hover::after {
 .competitive-advantage {
     border-right: 5px solid var(--accent-color);
     padding-right: 25px;
-    border-left: none; /* Remove left border */
+    border-left: none;
 }
 .competitive-advantage h3 i {
     color: var(--primary-color);
@@ -288,28 +288,31 @@ nav ul li a:hover::after {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 60px;
-    text-align: center;
+    text-align: right; /* Changed from center to right for text content */
 }
 
 .why-choose-us h2 {
     color: var(--primary-color);
     margin-bottom: 25px;
+    text-align: center; /* Heading remains centered */
 }
 .why-choose-us h2::after {
     background: var(--primary-color);
+    margin: 10px auto 0; /* Underline remains centered */
 }
 
 .why-choose-us p {
     font-size: 1.1em;
     margin-bottom: 30px;
+    text-align: right; /* Ensure paragraph is right-aligned */
 }
 
 .why-choose-us ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center; /* Center list items as a block */
-    display: inline-block; /* To center the list itself */
+    text-align: right; /* Align list items to the right */
+    /* Removed display: inline-block; which was causing centering issues for the list block */
 }
 
 .why-choose-us ul li {
