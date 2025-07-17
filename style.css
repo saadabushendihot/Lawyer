@@ -282,20 +282,21 @@ nav ul li a:hover::after {
     color: var(--primary-color);
 }
 
-/* WHY CHOOSE US SECTION - Specific RTL adjustments */
+/* --- START WHY CHOOSE US SECTION - LTR OVERRIDE --- */
 .why-choose-us {
     background-color: var(--white);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 60px;
-    text-align: right; /* Ensure the block text aligns to the right */
+    text-align: left; /* OVERRIDE: Align block text to the left */
+    direction: ltr; /* OVERRIDE: Change text direction to Left-to-Right */
 }
 
 .why-choose-us h2 {
     color: var(--primary-color);
     margin-bottom: 25px;
-    text-align: center; /* Heading remains centered */
+    text-align: center; /* Heading remains centered even in LTR box */
 }
 .why-choose-us h2::after {
     background: var(--primary-color);
@@ -305,16 +306,16 @@ nav ul li a:hover::after {
 .why-choose-us p {
     font-size: 1.1em;
     margin-bottom: 30px;
-    text-align: right; /* Paragraph should be right-aligned */
+    text-align: left; /* Paragraph should be left-aligned */
 }
 
 .why-choose-us ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: right; /* Ensure list items as a whole are right-aligned */
-    /* Removed display: inline-block; which can interfere with full-width alignment */
-    width: 100%; /* Ensure the ul takes full available width */
+    text-align: left; /* Align list items to the left */
+    width: 100%;
+    /* display: flex; flex-direction: column; align-items: flex-start; are good, but can be managed by li */
 }
 
 .why-choose-us ul li {
@@ -324,22 +325,24 @@ nav ul li a:hover::after {
     align-items: center;
     gap: 10px;
     color: var(--text-color);
-    justify-content: flex-end; /* Align icon and text to the right within the list item */
-    padding-right: 0; /* Remove padding if any from previous attempts */
-    padding-left: 0; /* Remove padding if any from previous attempts */
+    justify-content: flex-start; /* Align icon and text to the start (left) */
+    padding-left: 25px; /* Add padding for the bullet/icon on the left */
+    padding-right: 0; /* Ensure no right padding interference */
+    flex-direction: row; /* Standard LTR order: icon then text */
 }
 
 .why-choose-us ul li i {
     color: var(--accent-color);
     font-size: 1.2em;
-    /* For RTL, icon should be on the right, so no margin-left needed here */
-    margin-right: 5px; /* Add some space if desired between icon and text */
-    order: 2; /* Put the icon after the text in the visual order within flexbox */
+    margin-right: 5px; /* Margin after icon */
+    margin-left: 0; /* No margin on left */
+    order: 1; /* Icon comes first visually */
 }
 
 .why-choose-us ul li strong {
-    order: 1; /* Put the text before the icon in the visual order within flexbox */
+    order: 2; /* Text comes second visually */
 }
+/* --- END WHY CHOOSE US SECTION - LTR OVERRIDE --- */
 
 
 /* Screenshots Section */
@@ -641,9 +644,10 @@ footer {
         margin-right: 0;
     }
 
-    /* WHY CHOOSE US SECTION - Mobile adjustments */
+    /* --- START WHY CHOOSE US SECTION - Mobile LTR adjustments --- */
     .why-choose-us {
-        text-align: center; /* On mobile, it's often better to center block text */
+        text-align: center; /* On mobile, keep text centered for better aesthetics */
+        direction: ltr; /* Ensure LTR persists on mobile */
     }
     .why-choose-us p {
         text-align: center; /* Center paragraph on mobile */
@@ -655,18 +659,20 @@ footer {
         margin-right: auto; /* Center the list block */
     }
     .why-choose-us ul li {
-        justify-content: flex-start; /* For mobile, if list is centered, align items from start */
-        padding-left: 25px; /* Add padding for the bullet */
+        justify-content: flex-start; /* Align list items from start (left) */
+        padding-left: 25px; /* Padding for the bullet/icon */
         padding-right: 0;
+        flex-direction: row; /* Ensure icon then text */
     }
     .why-choose-us ul li i {
-        order: 1; /* Icon before text for typical left-to-right visual order when justified start */
-        margin-right: 0;
-        margin-left: 5px; /* Space between icon and text */
+        order: 1; /* Icon first */
+        margin-right: 5px; /* Space after icon */
+        margin-left: 0;
     }
     .why-choose-us ul li strong {
-        order: 2; /* Text after icon */
+        order: 2; /* Text second */
     }
+    /* --- END WHY CHOOSE US SECTION - Mobile LTR adjustments --- */
 }
 
 @media (max-width: 480px) {
