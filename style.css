@@ -72,6 +72,7 @@ p {
     transition: background-color 0.3s ease;
     margin-top: 20px;
     font-weight: bold;
+    text-align: center; /* Ensure button text is centered */
 }
 
 .btn:hover {
@@ -92,7 +93,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -117,8 +118,8 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    justify-content: center; /* Center items when wrapped */
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Align links to the right by default */
 }
 
 nav ul li {
@@ -130,6 +131,7 @@ nav ul li a {
     font-size: 1.1em;
     padding: 5px 0;
     position: relative;
+    display: block; /* Make links block for better touch area */
 }
 
 nav ul li a::after {
@@ -161,7 +163,7 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap-reverse; /* Image on right, text on left for RTL */
+    flex-wrap: wrap-reverse;
 }
 
 .hero-content {
@@ -179,7 +181,7 @@ nav ul li a:hover::after {
 }
 .hero-content h2::after {
     background: var(--white);
-    margin: 10px 0 0 auto; /* Align underline to the right */
+    margin: 10px 0 0 auto;
 }
 
 .hero-content p {
@@ -220,6 +222,9 @@ nav ul li a:hover::after {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     text-align: right;
+    display: flex; /* Use flexbox for icon and title alignment */
+    flex-direction: column; /* Stack icon and title vertically on mobile */
+    align-items: flex-end; /* Align content to the right */
 }
 
 .feature-item h3 {
@@ -231,17 +236,22 @@ nav ul li a:hover::after {
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-direction: row-reverse; /* Put icon on the right for RTL */
 }
 
 .feature-item h3 i {
     color: var(--accent-color);
     font-size: 1.2em;
+    margin-left: 0; /* Remove potential extra margin */
+    margin-right: 5px; /* Add space between icon and text */
 }
 
 .feature-item ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    text-align: right;
+    width: 100%; /* Ensure list takes full width */
 }
 
 .feature-item ul li {
@@ -261,8 +271,9 @@ nav ul li a:hover::after {
 }
 
 .competitive-advantage {
-    border-right: 5px solid var(--accent-color); /* Highlight competitive advantages */
+    border-right: 5px solid var(--accent-color);
     padding-right: 25px;
+    border-left: none; /* Remove left border */
 }
 .competitive-advantage h3 i {
     color: var(--primary-color);
@@ -297,8 +308,8 @@ nav ul li a:hover::after {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: right;
-    display: inline-block; /* To center the list items */
+    text-align: center; /* Center list items as a block */
+    display: inline-block; /* To center the list itself */
 }
 
 .why-choose-us ul li {
@@ -308,6 +319,7 @@ nav ul li a:hover::after {
     align-items: center;
     gap: 10px;
     color: var(--text-color);
+    justify-content: flex-end; /* Align content to the right within list item */
 }
 
 .why-choose-us ul li i {
@@ -359,18 +371,36 @@ nav ul li a:hover::after {
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.video-wrapper iframe {
+.video-wrapper iframe, .video-wrapper div[style*="padding-top: 56.2500%"] {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+    top: 0;
+    left: 0;
+    border: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 8px; /* Apply border-radius to the inner iframe as well */
 }
 
 .video-call-to-action {
     font-size: 1.1em;
     color: var(--text-color);
+}
+
+.canva-link {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.canva-link:hover {
+    background-color: #218838; /* Darker green on hover */
 }
 
 /* Contact Section */
@@ -451,68 +481,202 @@ footer {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 768px) {
-    .hero .container {
-        flex-direction: column;
-    }
-
-    .hero-content, .hero-image {
-        width: 100%;
-        text-align: center;
-    }
-
-    .hero-content h2, .hero-content h2::after {
-        text-align: center;
-        margin: 0 auto 20px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-        margin-top: 15px;
+/* For screens smaller than 992px (typical tablet landscape and below) */
+@media (max-width: 991px) {
+    .container {
+        padding: 0 15px;
     }
 
     nav ul li {
-        margin: 10px 0;
+        margin: 0 10px;
+    }
+    nav ul li a {
+        font-size: 1em;
     }
 
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .feature-item {
+        padding: 20px;
+    }
     .feature-item h3 {
+        font-size: 1.4em;
+    }
+    .feature-item ul li {
+        font-size: 0.95em;
+    }
+}
+
+/* For screens smaller than 768px (typical tablet portrait and below) */
+@media (max-width: 767px) {
+    header {
+        padding: 10px 0;
+    }
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .logo {
+        width: 100%;
         justify-content: center;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+    nav ul li {
+        margin: 8px 0;
+        width: 100%; /* Make each nav item take full width */
+    }
+    nav ul li a {
+        padding: 8px 0;
+        font-size: 1.05em;
+    }
+    nav ul li a::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .hero .container {
+        flex-direction: column-reverse; /* Text on top, image below for RTL mobile */
+        text-align: center;
+    }
+    .hero-content {
+        padding: 20px 0;
+        text-align: center; /* Center text on mobile */
+    }
+    .hero-content h2 {
+        font-size: 2.2em;
+        text-align: center;
+        margin: 0 auto 20px; /* Center the heading and its underline */
+    }
+    .hero-content h2::after {
+        margin: 10px auto 0; /* Center the heading underline */
+    }
+    .hero-image {
+        padding: 20px 0;
+    }
+    .hero .btn {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .features-section, .screenshots-section, .video-section, .contact-section {
+        padding: 40px 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .feature-item {
+        align-items: center; /* Center items within the feature box */
+        text-align: center;
+    }
+    .feature-item h3 {
+        justify-content: center; /* Center icon and text */
+        flex-direction: row; /* Icon on left for centering logic */
+    }
+    .feature-item h3 i {
+        margin-right: 10px; /* Space between icon and text */
+        margin-left: 0;
     }
     .feature-item ul {
         text-align: center;
     }
     .feature-item ul li {
         padding-right: 0;
-        padding-left: 25px; /* Adjust for centering */
+        padding-left: 25px; /* Adjust for centering bullet */
+        justify-content: center; /* Center list items */
     }
     .feature-item ul li::before {
         right: auto;
-        left: 0;
+        left: 0; /* Align bullet to the left */
     }
+
     .competitive-advantage {
         border-right: none;
-        border-left: 5px solid var(--accent-color); /* Adjust border for RTL */
-        padding-right: 30px;
-        padding-left: 25px;
+        border-left: none; /* Remove side borders on mobile */
+        border-top: 5px solid var(--accent-color); /* Add top border for distinction */
+        padding-top: 20px;
+        padding-right: 20px; /* Reset horizontal padding */
+        padding-left: 20px;
+    }
+    .competitive-advantage h3 {
+        flex-direction: row-reverse; /* Revert icon to right for better RTL consistency when centered */
+    }
+    .competitive-advantage h3 i {
+        margin-left: 10px; /* Space between icon and text */
+        margin-right: 0;
+    }
+
+
+    .why-choose-us ul li {
+        font-size: 1em;
+        justify-content: center; /* Center the list items */
+    }
+    .why-choose-us ul li i {
+        margin-left: 5px; /* Adjust spacing */
+    }
+
+    .screenshot-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
     }
 
     .contact-info {
         flex-direction: column;
-        align-items: center;
+        gap: 20px;
+    }
+    .contact-item {
+        width: 90%; /* Make contact items wider */
+        padding: 20px;
     }
 }
 
+/* For extra small screens (e.g., iPhone SE) */
 @media (max-width: 480px) {
-    h2 {
-        font-size: 2em;
+    h1 {
+        font-size: 1.5em;
     }
-
     .hero-content h2 {
-        font-size: 2.5em;
+        font-size: 1.8em;
     }
-
+    .hero-content p {
+        font-size: 0.95em;
+    }
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95em;
+    }
+    .feature-item h3 {
+        font-size: 1.2em;
+    }
+    .feature-item ul li {
+        font-size: 0.9em;
+    }
     .contact-item {
-        width: 90%;
+        padding: 15px 20px;
+        font-size: 0.95em;
+    }
+    .contact-item i {
+        font-size: 2em;
     }
 }
