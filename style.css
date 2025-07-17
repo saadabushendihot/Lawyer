@@ -17,8 +17,8 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--light-bg);
-    direction: rtl; /* Set default text direction to RTL */
-    text-align: right; /* Align text to the right */
+    direction: rtl; /* Set default text direction to RTL for the whole page */
+    text-align: right; /* Align text to the right for the whole page */
 }
 
 .container {
@@ -72,7 +72,7 @@ p {
     transition: background-color 0.3s ease;
     margin-top: 20px;
     font-weight: bold;
-    text-align: center; /* Ensure button text is centered */
+    text-align: center;
 }
 
 .btn:hover {
@@ -103,7 +103,7 @@ nav {
 }
 
 .logo .logo-main-image {
-    height: 50px; /* Adjust as needed */
+    height: 50px;
     width: auto;
 }
 
@@ -119,7 +119,7 @@ nav ul {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end; /* Align links to the right by default */
+    justify-content: flex-end;
 }
 
 nav ul li {
@@ -131,7 +131,7 @@ nav ul li a {
     font-size: 1.1em;
     padding: 5px 0;
     position: relative;
-    display: block; /* Make links block for better touch area */
+    display: block;
 }
 
 nav ul li a::after {
@@ -282,13 +282,14 @@ nav ul li a:hover::after {
     color: var(--primary-color);
 }
 
+/* WHY CHOOSE US SECTION - Specific RTL adjustments */
 .why-choose-us {
     background-color: var(--white);
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 60px;
-    text-align: right; /* Changed from center to right for text content */
+    text-align: right; /* Ensure the block text aligns to the right */
 }
 
 .why-choose-us h2 {
@@ -304,31 +305,42 @@ nav ul li a:hover::after {
 .why-choose-us p {
     font-size: 1.1em;
     margin-bottom: 30px;
-    text-align: right; /* Ensure paragraph is right-aligned */
+    text-align: right; /* Paragraph should be right-aligned */
 }
 
 .why-choose-us ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: right; /* Align list items to the right */
-    /* Removed display: inline-block; which was causing centering issues for the list block */
+    text-align: right; /* Ensure list items as a whole are right-aligned */
+    /* Removed display: inline-block; which can interfere with full-width alignment */
+    width: 100%; /* Ensure the ul takes full available width */
 }
 
 .why-choose-us ul li {
     font-size: 1.05em;
     margin-bottom: 15px;
-    display: flex;
+    display: flex; /* Use flexbox for icon-text alignment */
     align-items: center;
     gap: 10px;
     color: var(--text-color);
-    justify-content: flex-end; /* Align content to the right within list item */
+    justify-content: flex-end; /* Align icon and text to the right within the list item */
+    padding-right: 0; /* Remove padding if any from previous attempts */
+    padding-left: 0; /* Remove padding if any from previous attempts */
 }
 
 .why-choose-us ul li i {
     color: var(--accent-color);
     font-size: 1.2em;
+    /* For RTL, icon should be on the right, so no margin-left needed here */
+    margin-right: 5px; /* Add some space if desired between icon and text */
+    order: 2; /* Put the icon after the text in the visual order within flexbox */
 }
+
+.why-choose-us ul li strong {
+    order: 1; /* Put the text before the icon in the visual order within flexbox */
+}
+
 
 /* Screenshots Section */
 .screenshots-section {
@@ -383,7 +395,7 @@ nav ul li a:hover::after {
     border: none;
     padding: 0;
     margin: 0;
-    border-radius: 8px; /* Apply border-radius to the inner iframe as well */
+    border-radius: 8px;
 }
 
 .video-call-to-action {
@@ -403,7 +415,7 @@ nav ul li a:hover::after {
 }
 
 .canva-link:hover {
-    background-color: #218838; /* Darker green on hover */
+    background-color: #218838;
 }
 
 /* Contact Section */
@@ -465,13 +477,13 @@ nav ul li a:hover::after {
 }
 
 .contact-item.whatsapp i {
-    color: #25d366; /* WhatsApp green */
+    color: #25d366;
 }
 .contact-item.phone i {
-    color: #007bff; /* Blue for phone */
+    color: #007bff;
 }
 .contact-item.email i {
-    color: #dc3545; /* Red for email */
+    color: #dc3545;
 }
 
 /* Footer */
@@ -484,7 +496,6 @@ footer {
 }
 
 /* Responsive Adjustments */
-/* For screens smaller than 992px (typical tablet landscape and below) */
 @media (max-width: 991px) {
     .container {
         padding: 0 15px;
@@ -520,7 +531,6 @@ footer {
     }
 }
 
-/* For screens smaller than 768px (typical tablet portrait and below) */
 @media (max-width: 767px) {
     header {
         padding: 10px 0;
@@ -542,7 +552,7 @@ footer {
     }
     nav ul li {
         margin: 8px 0;
-        width: 100%; /* Make each nav item take full width */
+        width: 100%;
     }
     nav ul li a {
         padding: 8px 0;
@@ -554,20 +564,20 @@ footer {
     }
 
     .hero .container {
-        flex-direction: column-reverse; /* Text on top, image below for RTL mobile */
+        flex-direction: column-reverse;
         text-align: center;
     }
     .hero-content {
         padding: 20px 0;
-        text-align: center; /* Center text on mobile */
+        text-align: center;
     }
     .hero-content h2 {
         font-size: 2.2em;
         text-align: center;
-        margin: 0 auto 20px; /* Center the heading and its underline */
+        margin: 0 auto 20px;
     }
     .hero-content h2::after {
-        margin: 10px auto 0; /* Center the heading underline */
+        margin: 10px auto 0;
     }
     .hero-image {
         padding: 20px 0;
@@ -587,19 +597,19 @@ footer {
     }
 
     .features-grid {
-        grid-template-columns: 1fr; /* Single column on small screens */
+        grid-template-columns: 1fr;
     }
 
     .feature-item {
-        align-items: center; /* Center items within the feature box */
+        align-items: center;
         text-align: center;
     }
     .feature-item h3 {
-        justify-content: center; /* Center icon and text */
-        flex-direction: row; /* Icon on left for centering logic */
+        justify-content: center;
+        flex-direction: row;
     }
     .feature-item h3 i {
-        margin-right: 10px; /* Space between icon and text */
+        margin-right: 10px;
         margin-left: 0;
     }
     .feature-item ul {
@@ -607,54 +617,58 @@ footer {
     }
     .feature-item ul li {
         padding-right: 0;
-        padding-left: 25px; /* Adjust for centering bullet */
-        justify-content: center; /* Center list items */
+        padding-left: 25px;
+        justify-content: center;
     }
     .feature-item ul li::before {
         right: auto;
-        left: 0; /* Align bullet to the left */
+        left: 0;
     }
 
     .competitive-advantage {
         border-right: none;
-        border-left: none; /* Remove side borders on mobile */
-        border-top: 5px solid var(--accent-color); /* Add top border for distinction */
+        border-left: none;
+        border-top: 5px solid var(--accent-color);
         padding-top: 20px;
-        padding-right: 20px; /* Reset horizontal padding */
+        padding-right: 20px;
         padding-left: 20px;
     }
     .competitive-advantage h3 {
-        flex-direction: row-reverse; /* Revert icon to right for better RTL consistency when centered */
+        flex-direction: row-reverse;
     }
     .competitive-advantage h3 i {
-        margin-left: 10px; /* Space between icon and text */
+        margin-left: 10px;
         margin-right: 0;
     }
 
-
+    /* WHY CHOOSE US SECTION - Mobile adjustments */
+    .why-choose-us {
+        text-align: center; /* On mobile, it's often better to center block text */
+    }
+    .why-choose-us p {
+        text-align: center; /* Center paragraph on mobile */
+    }
+    .why-choose-us ul {
+        text-align: center; /* Center the list itself on mobile */
+        width: fit-content; /* Allow list to shrink-wrap its content */
+        margin-left: auto; /* Center the list block */
+        margin-right: auto; /* Center the list block */
+    }
     .why-choose-us ul li {
-        font-size: 1em;
-        justify-content: center; /* Center the list items */
+        justify-content: flex-start; /* For mobile, if list is centered, align items from start */
+        padding-left: 25px; /* Add padding for the bullet */
+        padding-right: 0;
     }
     .why-choose-us ul li i {
-        margin-left: 5px; /* Adjust spacing */
+        order: 1; /* Icon before text for typical left-to-right visual order when justified start */
+        margin-right: 0;
+        margin-left: 5px; /* Space between icon and text */
     }
-
-    .screenshot-grid {
-        grid-template-columns: 1fr; /* Single column on small screens */
-    }
-
-    .contact-info {
-        flex-direction: column;
-        gap: 20px;
-    }
-    .contact-item {
-        width: 90%; /* Make contact items wider */
-        padding: 20px;
+    .why-choose-us ul li strong {
+        order: 2; /* Text after icon */
     }
 }
 
-/* For extra small screens (e.g., iPhone SE) */
 @media (max-width: 480px) {
     h1 {
         font-size: 1.5em;
