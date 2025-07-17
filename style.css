@@ -289,58 +289,55 @@ nav ul li a:hover::after {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-top: 60px;
-    text-align: left; /* OVERRIDE: Align block text to the left */
-    direction: ltr; /* OVERRIDE: Change text direction to Left-to-Right */
 }
 
 .why-choose-us h2 {
     color: var(--primary-color);
     margin-bottom: 25px;
-    text-align: center; /* Heading remains centered even in LTR box */
+    text-align: center;
 }
 .why-choose-us h2::after {
     background: var(--primary-color);
-    margin: 10px auto 0; /* Underline remains centered */
+    margin: 10px auto 0;
 }
 
 .why-choose-us p {
     font-size: 1.1em;
     margin-bottom: 30px;
-    text-align: left; /* Paragraph should be left-aligned */
+    text-align: right;
 }
 
 .why-choose-us ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left; /* Align list items to the left */
+    text-align: right;
     width: 100%;
-    /* display: flex; flex-direction: column; align-items: flex-start; are good, but can be managed by li */
 }
 
 .why-choose-us ul li {
     font-size: 1.05em;
     margin-bottom: 15px;
-    display: flex; /* Use flexbox for icon-text alignment */
-    align-items: center;
+    display: flex;
+    align-items: flex-start;
     gap: 10px;
     color: var(--text-color);
-    justify-content: flex-start; /* Align icon and text to the start (left) */
-    padding-left: 25px; /* Add padding for the bullet/icon on the left */
-    padding-right: 0; /* Ensure no right padding interference */
-    flex-direction: row; /* Standard LTR order: icon then text */
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: 25px;
+    flex-direction: row-reverse;
 }
 
 .why-choose-us ul li i {
     color: var(--accent-color);
     font-size: 1.2em;
-    margin-right: 5px; /* Margin after icon */
-    margin-left: 0; /* No margin on left */
-    order: 1; /* Icon comes first visually */
+    margin-right: 0;
+    margin-left: 5px;
+    order: 2;
 }
 
 .why-choose-us ul li strong {
-    order: 2; /* Text comes second visually */
+    order: 1;
 }
 /* --- END WHY CHOOSE US SECTION - LTR OVERRIDE --- */
 
@@ -646,31 +643,30 @@ footer {
 
     /* --- START WHY CHOOSE US SECTION - Mobile LTR adjustments --- */
     .why-choose-us {
-        text-align: center; /* On mobile, keep text centered for better aesthetics */
-        direction: ltr; /* Ensure LTR persists on mobile */
+        text-align: center;
     }
     .why-choose-us p {
-        text-align: center; /* Center paragraph on mobile */
+        text-align: center;
     }
     .why-choose-us ul {
-        text-align: center; /* Center the list itself on mobile */
-        width: fit-content; /* Allow list to shrink-wrap its content */
-        margin-left: auto; /* Center the list block */
-        margin-right: auto; /* Center the list block */
+        text-align: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
     .why-choose-us ul li {
-        justify-content: flex-start; /* Align list items from start (left) */
-        padding-left: 25px; /* Padding for the bullet/icon */
-        padding-right: 0;
-        flex-direction: row; /* Ensure icon then text */
+        justify-content: flex-end;
+        padding-left: 0;
+        padding-right: 25px;
+        flex-direction: row-reverse;
     }
     .why-choose-us ul li i {
-        order: 1; /* Icon first */
-        margin-right: 5px; /* Space after icon */
-        margin-left: 0;
+        order: 2;
+        margin-right: 0;
+        margin-left: 5px;
     }
     .why-choose-us ul li strong {
-        order: 2; /* Text second */
+        order: 1;
     }
     /* --- END WHY CHOOSE US SECTION - Mobile LTR adjustments --- */
 }
